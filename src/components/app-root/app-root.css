@@ -1,25 +1,45 @@
 #main {
-  display: grid;
-  grid-gap: 24px 24px;
+  display: flex;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 700px 1fr;
+  overflow: hidden;
   padding: 24px;
   box-sizing: border-box;
-  background-color: #000;
 }
 
 #drivetrain-telemetry {
-  grid-row-start: 1;
-  grid-row-end: 5;
+  width: 700px;
 }
 
-#main > div {
+#other-telemetry {
+  flex: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+#other-telemetry::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #111;
+}
+
+#other-telemetry::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #111;
+}
+
+#other-telemetry::-webkit-scrollbar-thumb
+{
+	background-color: #222;
+}
+
+
+
+.card {
   background-color: #111;
   border-radius: 6px;
-}
-
-#main > div > * {
-  width: 100%;
-  height: 100%;
 }

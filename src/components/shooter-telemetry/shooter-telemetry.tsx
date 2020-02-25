@@ -14,9 +14,14 @@ export class ShooterTelemetry {
   render() {
     return (
       <div class='telemetry-main'>
-        <p id='title'>Shooter</p>
+        <span id='title'>Shooter</span>
+        <div style={{ height: '12px' }} />
         <div id='row'>
-          
+          <div class='image' style={this.getStyle()} />
+          <div style={{ width: '24px' }} />
+          <spark-max-info-small />
+          <div style={{ width: '24px' }} />
+          <spark-max-info-small />
         </div>
       </div>
     );

@@ -11,15 +11,27 @@ export class AppRoot {
     return (
       <div>
         <main id='main'>
-          <div id='drivetrain-telemetry'> 
+          <div id='drivetrain-telemetry' class='card'>
             <drivetrain-telemetry />
           </div>
-          <div id='shooter-telemetry'>
-            <shooter-telemetry />
+          <div style={{ width: '24px' }} />
+          <div id='other-telemetry'>
+            <div id='shooter-telemetry' class='card'>
+              <shooter-telemetry />
+            </div>
+            <div style={{ height: '24px' }} />
+            <div id='intake-telemetry' class='card'>
+              <shooter-telemetry />
+            </div>
+            <div style={{ height: '24px' }} />
+            <div id='arm-telemetry' class='card'>
+              <shooter-telemetry />
+            </div>
+            <div style={{ height: '24px' }} />
+            <div id='hang-telemetry' class='card'>
+              <shooter-telemetry />
+            </div>
           </div>
-          <div id='intake-telemetry'></div>
-          <div id='arm-telemetry'></div>
-          <div id='hang-telemetry'></div>
         </main>
       </div>
     );
