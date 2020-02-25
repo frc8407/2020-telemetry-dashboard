@@ -8,7 +8,7 @@ import { Component, h, getAssetPath } from '@stencil/core';
 })
 export class DrivetrainTelemetry {
   getStyle(): any {
-    return { 'background-image': `url(${getAssetPath('./assets/drivetrain-svg.svg')}` }
+    return { 'background-image': `url(${getAssetPath('./assets/drivetrain-icon.svg')}` }
   }
 
   render() {

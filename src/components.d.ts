@@ -13,6 +13,7 @@ export namespace Components {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
   interface GyroInfoSmall {}
+  interface IntakeTelemetry {}
   interface KeyValueText {
     'color': string;
     'reversed': boolean;
@@ -21,6 +22,9 @@ export namespace Components {
   }
   interface ShooterTelemetry {}
   interface SparkMaxInfoSmall {
+    'alignRight': boolean;
+  }
+  interface VictorSpxInfoSmall {
     'alignRight': boolean;
   }
 }
@@ -46,6 +50,12 @@ declare global {
     new (): HTMLGyroInfoSmallElement;
   };
 
+  interface HTMLIntakeTelemetryElement extends Components.IntakeTelemetry, HTMLStencilElement {}
+  var HTMLIntakeTelemetryElement: {
+    prototype: HTMLIntakeTelemetryElement;
+    new (): HTMLIntakeTelemetryElement;
+  };
+
   interface HTMLKeyValueTextElement extends Components.KeyValueText, HTMLStencilElement {}
   var HTMLKeyValueTextElement: {
     prototype: HTMLKeyValueTextElement;
@@ -63,13 +73,21 @@ declare global {
     prototype: HTMLSparkMaxInfoSmallElement;
     new (): HTMLSparkMaxInfoSmallElement;
   };
+
+  interface HTMLVictorSpxInfoSmallElement extends Components.VictorSpxInfoSmall, HTMLStencilElement {}
+  var HTMLVictorSpxInfoSmallElement: {
+    prototype: HTMLVictorSpxInfoSmallElement;
+    new (): HTMLVictorSpxInfoSmallElement;
+  };
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
     'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
     'gyro-info-small': HTMLGyroInfoSmallElement;
+    'intake-telemetry': HTMLIntakeTelemetryElement;
     'key-value-text': HTMLKeyValueTextElement;
     'shooter-telemetry': HTMLShooterTelemetryElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
+    'victor-spx-info-small': HTMLVictorSpxInfoSmallElement;
   }
 }
 
@@ -77,6 +95,7 @@ declare namespace LocalJSX {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
   interface GyroInfoSmall {}
+  interface IntakeTelemetry {}
   interface KeyValueText {
     'color'?: string;
     'reversed'?: boolean;
@@ -87,14 +106,19 @@ declare namespace LocalJSX {
   interface SparkMaxInfoSmall {
     'alignRight'?: boolean;
   }
+  interface VictorSpxInfoSmall {
+    'alignRight'?: boolean;
+  }
 
   interface IntrinsicElements {
     'app-root': AppRoot;
     'drivetrain-telemetry': DrivetrainTelemetry;
     'gyro-info-small': GyroInfoSmall;
+    'intake-telemetry': IntakeTelemetry;
     'key-value-text': KeyValueText;
     'shooter-telemetry': ShooterTelemetry;
     'spark-max-info-small': SparkMaxInfoSmall;
+    'victor-spx-info-small': VictorSpxInfoSmall;
   }
 }
 
@@ -107,9 +131,11 @@ declare module "@stencil/core" {
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
       'gyro-info-small': LocalJSX.GyroInfoSmall & JSXBase.HTMLAttributes<HTMLGyroInfoSmallElement>;
+      'intake-telemetry': LocalJSX.IntakeTelemetry & JSXBase.HTMLAttributes<HTMLIntakeTelemetryElement>;
       'key-value-text': LocalJSX.KeyValueText & JSXBase.HTMLAttributes<HTMLKeyValueTextElement>;
       'shooter-telemetry': LocalJSX.ShooterTelemetry & JSXBase.HTMLAttributes<HTMLShooterTelemetryElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
+      'victor-spx-info-small': LocalJSX.VictorSpxInfoSmall & JSXBase.HTMLAttributes<HTMLVictorSpxInfoSmallElement>;
     }
   }
 }

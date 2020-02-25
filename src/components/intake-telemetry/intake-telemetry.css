@@ -1,0 +1,20 @@
+.telemetry-main {
+  padding: 24px;
+  box-sizing: border-box;
+}
+#title {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.image {
+  width: 140px;
+  height: 140px;
+  background-size: 140px;
+}
+
+#row {
+  display: flex;
+  flex-direction: row;
+}
