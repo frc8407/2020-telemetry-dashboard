@@ -19,6 +19,7 @@ export namespace Components {
     'units': string;
     'value': any;
   }
+  interface ShooterTelemetry {}
   interface SparkMaxInfoSmall {
     'alignRight': boolean;
   }
@@ -51,6 +52,12 @@ declare global {
     new (): HTMLKeyValueTextElement;
   };
 
+  interface HTMLShooterTelemetryElement extends Components.ShooterTelemetry, HTMLStencilElement {}
+  var HTMLShooterTelemetryElement: {
+    prototype: HTMLShooterTelemetryElement;
+    new (): HTMLShooterTelemetryElement;
+  };
+
   interface HTMLSparkMaxInfoSmallElement extends Components.SparkMaxInfoSmall, HTMLStencilElement {}
   var HTMLSparkMaxInfoSmallElement: {
     prototype: HTMLSparkMaxInfoSmallElement;
@@ -61,6 +68,7 @@ declare global {
     'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
     'gyro-info-small': HTMLGyroInfoSmallElement;
     'key-value-text': HTMLKeyValueTextElement;
+    'shooter-telemetry': HTMLShooterTelemetryElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
   }
 }
@@ -75,6 +83,7 @@ declare namespace LocalJSX {
     'units'?: string;
     'value'?: any;
   }
+  interface ShooterTelemetry {}
   interface SparkMaxInfoSmall {
     'alignRight'?: boolean;
   }
@@ -84,6 +93,7 @@ declare namespace LocalJSX {
     'drivetrain-telemetry': DrivetrainTelemetry;
     'gyro-info-small': GyroInfoSmall;
     'key-value-text': KeyValueText;
+    'shooter-telemetry': ShooterTelemetry;
     'spark-max-info-small': SparkMaxInfoSmall;
   }
 }
@@ -98,6 +108,7 @@ declare module "@stencil/core" {
       'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
       'gyro-info-small': LocalJSX.GyroInfoSmall & JSXBase.HTMLAttributes<HTMLGyroInfoSmallElement>;
       'key-value-text': LocalJSX.KeyValueText & JSXBase.HTMLAttributes<HTMLKeyValueTextElement>;
+      'shooter-telemetry': LocalJSX.ShooterTelemetry & JSXBase.HTMLAttributes<HTMLShooterTelemetryElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
     }
   }

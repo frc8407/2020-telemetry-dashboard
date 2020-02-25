@@ -6,8 +6,8 @@
 }
 
 .container {
-  width: 700px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
   background-size: 700px;
   padding: 12px;
 
@@ -17,17 +17,7 @@
   flex-direction: column;
 }
 
-.container > div {
-  flex: 1;
-
+#row {
   display: flex;
   flex-direction: row;
-}
-
-.container > div > * {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
 }

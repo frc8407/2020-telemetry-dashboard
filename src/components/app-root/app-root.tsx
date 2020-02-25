@@ -14,7 +14,9 @@ export class AppRoot {
           <div id='drivetrain-telemetry'> 
             <drivetrain-telemetry />
           </div>
-          <div id='shooter-telemetry'></div>
+          <div id='shooter-telemetry'>
+            <shooter-telemetry />
+          </div>
           <div id='intake-telemetry'></div>
           <div id='arm-telemetry'></div>
           <div id='hang-telemetry'></div>
