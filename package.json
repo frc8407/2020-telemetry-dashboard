@@ -14,5 +14,8 @@
     "@stencil/core": "^1.8.8",
     "@stencil/router": "^1.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^2.3.0"
+  }
 }
