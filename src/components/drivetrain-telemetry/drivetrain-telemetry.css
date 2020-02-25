@@ -1,2 +1,25 @@
 .container {
+  width: 700px;
+  height: 700px;
+  background-size: 700px;
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container > div {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.container > div > * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

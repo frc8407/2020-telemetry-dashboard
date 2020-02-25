@@ -7,10 +7,25 @@ import { Component, h, getAssetPath } from '@stencil/core';
   shadow: true
 })
 export class DrivetrainTelemetry {
+  getStyle(): any {
+    return {'background-image': `url(${getAssetPath('./assets/drivetrain-svg.svg')}`}
+  }
+
   render() {
     return (
-      <div class='container'>
-        <img src={getAssetPath('./assets/drivetrain-svg.svg')} width="700" height="700" />
+      <div class='container' style={this.getStyle()}>
+        <div class='front-wheels'>
+          <spark-max-info-small />
+          <spark-max-info-small alignRight />
+        </div>
+        <div class='middle-wheels'>
+          <spark-max-info-small />
+          <spark-max-info-small alignRight />
+        </div>
+        <div class='back-wheels'>
+          <spark-max-info-small />
+          <spark-max-info-small alignRight />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,15 @@
 .container {
-  background-color: #eee;
-  padding: 12px;
-  border-radius: 6px;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+
+  width: 175px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
 }

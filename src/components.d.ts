@@ -12,7 +12,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
-  interface SparkMaxInfoSmall {}
+  interface KeyValueText {
+    'units': string;
+    'value': any;
+  }
+  interface SparkMaxInfoSmall {
+    'alignRight': boolean;
+  }
 }
 
 declare global {
@@ -30,6 +36,12 @@ declare global {
     new (): HTMLDrivetrainTelemetryElement;
   };
 
+  interface HTMLKeyValueTextElement extends Components.KeyValueText, HTMLStencilElement {}
+  var HTMLKeyValueTextElement: {
+    prototype: HTMLKeyValueTextElement;
+    new (): HTMLKeyValueTextElement;
+  };
+
   interface HTMLSparkMaxInfoSmallElement extends Components.SparkMaxInfoSmall, HTMLStencilElement {}
   var HTMLSparkMaxInfoSmallElement: {
     prototype: HTMLSparkMaxInfoSmallElement;
@@ -38,6 +50,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
     'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
+    'key-value-text': HTMLKeyValueTextElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
   }
 }
@@ -45,11 +58,18 @@ declare global {
 declare namespace LocalJSX {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
-  interface SparkMaxInfoSmall {}
+  interface KeyValueText {
+    'units'?: string;
+    'value'?: any;
+  }
+  interface SparkMaxInfoSmall {
+    'alignRight'?: boolean;
+  }
 
   interface IntrinsicElements {
     'app-root': AppRoot;
     'drivetrain-telemetry': DrivetrainTelemetry;
+    'key-value-text': KeyValueText;
     'spark-max-info-small': SparkMaxInfoSmall;
   }
 }
@@ -62,6 +82,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
+      'key-value-text': LocalJSX.KeyValueText & JSXBase.HTMLAttributes<HTMLKeyValueTextElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
     }
   }

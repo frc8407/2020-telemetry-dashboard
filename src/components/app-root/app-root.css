@@ -1,31 +1,20 @@
 #main {
   display: grid;
-  grid-gap: 12px 12px;
-  width: calc(100vw - 24px);
-  height: calc(100vh - 24px);
-  grid-template-columns: 1fr 40vw;
-  padding: 12px;
-  box-sizing: content-box;
+  grid-gap: 24px 24px;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 700px 1fr;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #000;
 }
 
 #drivetrain-telemetry {
-  background-color: #aaa;
   grid-row-start: 1;
   grid-row-end: 5;
 }
 
-#shooter-telemetry {
-  background-color: #bbb;
-}
-
-#intake-telemetry {
-  background-color: #ccc;
-}
-
-#hang-telemetry {
-  background-color: #ddd;
-}
-
-#arm-telemetry {
-  background-color: #eee;
+#main > div {
+  background-color: #111;
+  border-radius: 6px;
 }
