@@ -11,7 +11,9 @@ export class AppRoot {
     return (
       <div>
         <main id='main'>
-          <div id='drivetrain-telemetry'> </div>
+          <div id='drivetrain-telemetry'> 
+            <drivetrain-telemetry />
+          </div>
           <div id='shooter-telemetry'></div>
           <div id='intake-telemetry'></div>
           <div id='arm-telemetry'></div>

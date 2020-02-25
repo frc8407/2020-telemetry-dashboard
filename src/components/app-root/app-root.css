@@ -3,7 +3,7 @@
   grid-gap: 12px 12px;
   width: calc(100vw - 24px);
   height: calc(100vh - 24px);
-  grid-template-columns: 1fr 30vw;
+  grid-template-columns: 1fr 40vw;
   padding: 12px;
   box-sizing: content-box;
 }

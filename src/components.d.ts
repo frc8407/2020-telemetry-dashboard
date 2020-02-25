@@ -11,6 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AppRoot {}
+  interface DrivetrainTelemetry {}
   interface SparkMaxInfoSmall {}
 }
 
@@ -23,6 +24,12 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
+  interface HTMLDrivetrainTelemetryElement extends Components.DrivetrainTelemetry, HTMLStencilElement {}
+  var HTMLDrivetrainTelemetryElement: {
+    prototype: HTMLDrivetrainTelemetryElement;
+    new (): HTMLDrivetrainTelemetryElement;
+  };
+
   interface HTMLSparkMaxInfoSmallElement extends Components.SparkMaxInfoSmall, HTMLStencilElement {}
   var HTMLSparkMaxInfoSmallElement: {
     prototype: HTMLSparkMaxInfoSmallElement;
@@ -30,16 +37,19 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
+    'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
   }
 }
 
 declare namespace LocalJSX {
   interface AppRoot {}
+  interface DrivetrainTelemetry {}
   interface SparkMaxInfoSmall {}
 
   interface IntrinsicElements {
     'app-root': AppRoot;
+    'drivetrain-telemetry': DrivetrainTelemetry;
     'spark-max-info-small': SparkMaxInfoSmall;
   }
 }
@@ -51,6 +61,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
     }
   }
