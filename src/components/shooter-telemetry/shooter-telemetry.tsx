@@ -1,4 +1,5 @@
-import { Component, h, getAssetPath } from '@stencil/core';
+import { Component, h, getAssetPath, Prop } from '@stencil/core';
+import { SparkMaxData } from '../spark-max-info-small/spark-max-info-small';
 
 
 @Component({
@@ -7,6 +8,9 @@ import { Component, h, getAssetPath } from '@stencil/core';
   shadow: true
 })
 export class ShooterTelemetry {
+  @Prop() leftShooterData: SparkMaxData;
+  @Prop() rightShooterData: SparkMaxData;
+
   getStyle(): any {
     return { 'background-image': `url(${getAssetPath('./assets/shooter-icon.svg')}` }
   }
@@ -19,9 +23,9 @@ export class ShooterTelemetry {
         <div id='row'>
           <div class='image' style={this.getStyle()} />
           <div style={{ width: '24px' }} />
-          <spark-max-info-small />
+          <spark-max-info-small name="leftShooter" data={this.leftShooterData} />
           <div style={{ width: '24px' }} />
-          <spark-max-info-small />
+          <spark-max-info-small name="rightShooter" data={this.rightShooterData} />
         </div>
       </div>
     );

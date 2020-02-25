@@ -1,4 +1,4 @@
-import { Component, h, getAssetPath } from '@stencil/core';
+import { Component, h, getAssetPath, Prop } from '@stencil/core';
 
 
 @Component({
@@ -7,6 +7,7 @@ import { Component, h, getAssetPath } from '@stencil/core';
   shadow: true
 })
 export class BatteryTelemetry {
+  @Prop() data: { voltage: number };
   getStyle(): any {
     return { 'background-image': `url(${getAssetPath('./assets/battery-icon.svg')}` }
   }
@@ -19,7 +20,7 @@ export class BatteryTelemetry {
         <div id='row'>
           <div class='image' style={this.getStyle()} />
           <div style={{ width: '24px' }} />
-          <span id='voltage'>12.37</span>
+          <span id='voltage'>{this.data.voltage.toFixed(2)}</span>
           <span id='units'>v</span>
         </div>
       </div>

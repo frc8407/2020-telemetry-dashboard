@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 
 @Component({
@@ -7,11 +7,12 @@ import { Component, h } from '@stencil/core';
   shadow: true
 })
 export class GyroInfoSmall {
+  @Prop() data: { yaw: number }
   render() {
     return (
       <div class='container'>
         <span id='title'>Gyro</span>
-        <key-value-text units="deg" value="125" />
+        <key-value-text units="deg" value={this.data.yaw} />
       </div>
     );
   }

@@ -12,7 +12,8 @@
   },
   "devDependencies": {
     "@stencil/core": "^1.8.8",
-    "@stencil/router": "^1.0.1"
+    "@stencil/router": "^1.0.1",
+    "@types/socket.io-client": "^1.4.32"
   },
   "license": "MIT",
   "dependencies": {

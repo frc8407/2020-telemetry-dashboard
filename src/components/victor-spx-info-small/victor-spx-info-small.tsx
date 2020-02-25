@@ -9,21 +9,25 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class VictorSPXInfoSmall {
   @Prop() alignRight: boolean;
+  @Prop() name: string;
+  @Prop() data: VictorSPXData;
+
   render() {
     return (
       <div class='container' style={{ 'align-items': this.alignRight ? 'flex-end' : 'flex-start' }}>
-        <span id='title'>frontLeftWheel</span>
+        <span id='title'>{name}</span>
         <div style={{ height: '4px' }} />
-        <key-value-text units="%" value="80%" color="#2374AB" reversed={this.alignRight} />
-        <key-value-text units="V" value="12" color="#70A9A1" reversed={this.alignRight} />
+        <key-value-text units="%" value={this.data.outputPercentage} color="#2374AB" reversed={this.alignRight} />
+        <key-value-text units="V" value={this.data.outputVoltage} color="#70A9A1" reversed={this.alignRight} />
       </div>
     );
   }
 }
 
-export interface VictorSPXInfo {
-  name: string,
-  temperature: number,
-  velocity: number,
-  position: number
+export interface VictorSPXData {
+  voltage: number;
+  outputVoltage: number;
+  outputPercentage: number;
+  temperature: number;
+  isInverted: boolean;
 }
