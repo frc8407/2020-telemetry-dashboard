@@ -11,6 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AppRoot {}
+  interface BatteryTelemetry {}
   interface DrivetrainTelemetry {}
   interface GyroInfoSmall {}
   interface IntakeTelemetry {}
@@ -36,6 +37,12 @@ declare global {
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
+  };
+
+  interface HTMLBatteryTelemetryElement extends Components.BatteryTelemetry, HTMLStencilElement {}
+  var HTMLBatteryTelemetryElement: {
+    prototype: HTMLBatteryTelemetryElement;
+    new (): HTMLBatteryTelemetryElement;
   };
 
   interface HTMLDrivetrainTelemetryElement extends Components.DrivetrainTelemetry, HTMLStencilElement {}
@@ -81,6 +88,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
+    'battery-telemetry': HTMLBatteryTelemetryElement;
     'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
     'gyro-info-small': HTMLGyroInfoSmallElement;
     'intake-telemetry': HTMLIntakeTelemetryElement;
@@ -93,6 +101,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface AppRoot {}
+  interface BatteryTelemetry {}
   interface DrivetrainTelemetry {}
   interface GyroInfoSmall {}
   interface IntakeTelemetry {}
@@ -112,6 +121,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'app-root': AppRoot;
+    'battery-telemetry': BatteryTelemetry;
     'drivetrain-telemetry': DrivetrainTelemetry;
     'gyro-info-small': GyroInfoSmall;
     'intake-telemetry': IntakeTelemetry;
@@ -129,6 +139,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'battery-telemetry': LocalJSX.BatteryTelemetry & JSXBase.HTMLAttributes<HTMLBatteryTelemetryElement>;
       'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
       'gyro-info-small': LocalJSX.GyroInfoSmall & JSXBase.HTMLAttributes<HTMLGyroInfoSmallElement>;
       'intake-telemetry': LocalJSX.IntakeTelemetry & JSXBase.HTMLAttributes<HTMLIntakeTelemetryElement>;

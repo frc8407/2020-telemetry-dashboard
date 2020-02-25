@@ -8,22 +8,19 @@ import { Component, h, getAssetPath } from '@stencil/core';
 })
 export class BatteryTelemetry {
   getStyle(): any {
-    return { 'background-image': `url(${getAssetPath('./assets/intake-icon.svg')}` }
+    return { 'background-image': `url(${getAssetPath('./assets/battery-icon.svg')}` }
   }
 
   render() {
     return (
       <div class='telemetry-main'>
-        <span id='title'>Intake</span>
+        <span id='title'>Battery</span>
         <div style={{ height: '12px' }} />
         <div id='row'>
           <div class='image' style={this.getStyle()} />
           <div style={{ width: '24px' }} />
-          <victor-spx-info-small />
-          <div style={{ width: '24px' }} />
-          <victor-spx-info-small />
-          <div style={{ width: '24px' }} />
-          <victor-spx-info-small />
+          <span id='voltage'>12.37</span>
+          <span id='units'>v</span>
         </div>
       </div>
     );
