@@ -11,12 +11,12 @@ export class SparkMaxInfoSmall {
   @Prop() alignRight: boolean;
   render() {
     return (
-      <div class='container' style={{'align-items': this.alignRight? 'flex-end' : 'flex-start'}}>
+      <div class='container' style={{ 'align-items': this.alignRight ? 'flex-end' : 'flex-start' }}>
         <span id='title'>frontLeftWheel</span>
-        <div style={{height: '4px'}} />
-        <key-value-text units="rev" value="550" />
-        <key-value-text units="RPM" value="12000" />
-        <key-value-text units="°C" value="25" />
+        <div style={{ height: '4px' }} />
+        <key-value-text units="rev" value="550" color="#2374AB" reversed={this.alignRight} />
+        <key-value-text units="RPM" value="12000" color="#70A9A1" reversed={this.alignRight} />
+        <key-value-text units="°C" value="25" reversed={this.alignRight} />
       </div>
     );
   }

@@ -12,7 +12,10 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
+  interface GyroInfoSmall {}
   interface KeyValueText {
+    'color': string;
+    'reversed': boolean;
     'units': string;
     'value': any;
   }
@@ -36,6 +39,12 @@ declare global {
     new (): HTMLDrivetrainTelemetryElement;
   };
 
+  interface HTMLGyroInfoSmallElement extends Components.GyroInfoSmall, HTMLStencilElement {}
+  var HTMLGyroInfoSmallElement: {
+    prototype: HTMLGyroInfoSmallElement;
+    new (): HTMLGyroInfoSmallElement;
+  };
+
   interface HTMLKeyValueTextElement extends Components.KeyValueText, HTMLStencilElement {}
   var HTMLKeyValueTextElement: {
     prototype: HTMLKeyValueTextElement;
@@ -50,6 +59,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-root': HTMLAppRootElement;
     'drivetrain-telemetry': HTMLDrivetrainTelemetryElement;
+    'gyro-info-small': HTMLGyroInfoSmallElement;
     'key-value-text': HTMLKeyValueTextElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
   }
@@ -58,7 +68,10 @@ declare global {
 declare namespace LocalJSX {
   interface AppRoot {}
   interface DrivetrainTelemetry {}
+  interface GyroInfoSmall {}
   interface KeyValueText {
+    'color'?: string;
+    'reversed'?: boolean;
     'units'?: string;
     'value'?: any;
   }
@@ -69,6 +82,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'app-root': AppRoot;
     'drivetrain-telemetry': DrivetrainTelemetry;
+    'gyro-info-small': GyroInfoSmall;
     'key-value-text': KeyValueText;
     'spark-max-info-small': SparkMaxInfoSmall;
   }
@@ -82,6 +96,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
       'drivetrain-telemetry': LocalJSX.DrivetrainTelemetry & JSXBase.HTMLAttributes<HTMLDrivetrainTelemetryElement>;
+      'gyro-info-small': LocalJSX.GyroInfoSmall & JSXBase.HTMLAttributes<HTMLGyroInfoSmallElement>;
       'key-value-text': LocalJSX.KeyValueText & JSXBase.HTMLAttributes<HTMLKeyValueTextElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
     }

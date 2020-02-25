@@ -20,6 +20,7 @@ export class DrivetrainTelemetry {
         </div>
         <div class='middle-wheels'>
           <spark-max-info-small />
+          <gyro-info-small />
           <spark-max-info-small alignRight />
         </div>
         <div class='back-wheels'>

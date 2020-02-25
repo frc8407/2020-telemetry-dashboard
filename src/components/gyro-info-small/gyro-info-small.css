@@ -2,20 +2,11 @@
   padding: 12px;
   border-radius: 4px;
 
-  width: 175px;
-
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
   background-color: rgba(0, 0, 0, 0.15);
   color: white;
-}
-
-.container > key-value-text {
-  width: 100%;
-}
-
-#title {
-  color: #555;
 }
