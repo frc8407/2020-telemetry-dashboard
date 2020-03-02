@@ -24,6 +24,10 @@
   border-radius: 8px;
   width: 20px;
   height: 20px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: red;
   margin-right: 8px;
+}
+
+.green {
+  background-color: greenyellow;
 }
