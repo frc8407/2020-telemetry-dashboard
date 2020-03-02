@@ -8,39 +8,29 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  SparkMaxData,
-} from './components/spark-max-info-small/spark-max-info-small';
-import {
-  VictorSPXData,
-} from './components/victor-spx-info-small/victor-spx-info-small';
-import {
-  SparkMaxData as SparkMaxData1,
-} from './components/spark-max-info-small/spark-max-info-small';
-import {
-  VictorSPXData as VictorSPXData1,
-} from './components/victor-spx-info-small/victor-spx-info-small';
+  BatteryData,
+  DrivetrainData,
+  GyroData,
+  IntakeData,
+  ShooterData,
+  SparkMAXFrame,
+  VictorSPXFrame,
+} from './data';
 
 export namespace Components {
   interface AppRoot {}
   interface BatteryTelemetry {
-    'data': { voltage: number };
+    'batteryFrame': BatteryData;
   }
   interface DrivetrainTelemetry {
-    'backLeftControllerData': SparkMaxData;
-    'backRightControllerData': SparkMaxData;
-    'frontLeftControllerData': SparkMaxData;
-    'frontRightControllerData': SparkMaxData;
-    'gyroData': { yaw: number };
-    'leftControllerData': SparkMaxData;
-    'rightControllerData': SparkMaxData;
+    'drivetrainFrame': DrivetrainData;
+    'gyroFrame': GyroData;
   }
   interface GyroInfoSmall {
-    'data': { yaw: number };
+    'data': GyroData;
   }
   interface IntakeTelemetry {
-    'indexerData': VictorSPXData;
-    'innerIntakeData': VictorSPXData;
-    'outerIntakeData': VictorSPXData;
+    'intakeFrame': IntakeData;
   }
   interface KeyValueText {
     'color': string;
@@ -49,17 +39,16 @@ export namespace Components {
     'value': number;
   }
   interface ShooterTelemetry {
-    'leftShooterData': SparkMaxData;
-    'rightShooterData': SparkMaxData;
+    'shooterFrame': ShooterData;
   }
   interface SparkMaxInfoSmall {
     'alignRight': boolean;
-    'data': SparkMaxData;
+    'data': SparkMAXFrame;
     'name': string;
   }
   interface VictorSpxInfoSmall {
     'alignRight': boolean;
-    'data': VictorSPXData;
+    'data': VictorSPXFrame;
     'name': string;
   }
 }
@@ -136,24 +125,17 @@ declare global {
 declare namespace LocalJSX {
   interface AppRoot {}
   interface BatteryTelemetry {
-    'data'?: { voltage: number };
+    'batteryFrame'?: BatteryData;
   }
   interface DrivetrainTelemetry {
-    'backLeftControllerData'?: SparkMaxData;
-    'backRightControllerData'?: SparkMaxData;
-    'frontLeftControllerData'?: SparkMaxData;
-    'frontRightControllerData'?: SparkMaxData;
-    'gyroData'?: { yaw: number };
-    'leftControllerData'?: SparkMaxData;
-    'rightControllerData'?: SparkMaxData;
+    'drivetrainFrame'?: DrivetrainData;
+    'gyroFrame'?: GyroData;
   }
   interface GyroInfoSmall {
-    'data'?: { yaw: number };
+    'data'?: GyroData;
   }
   interface IntakeTelemetry {
-    'indexerData'?: VictorSPXData;
-    'innerIntakeData'?: VictorSPXData;
-    'outerIntakeData'?: VictorSPXData;
+    'intakeFrame'?: IntakeData;
   }
   interface KeyValueText {
     'color'?: string;
@@ -162,17 +144,16 @@ declare namespace LocalJSX {
     'value'?: number;
   }
   interface ShooterTelemetry {
-    'leftShooterData'?: SparkMaxData;
-    'rightShooterData'?: SparkMaxData;
+    'shooterFrame'?: ShooterData;
   }
   interface SparkMaxInfoSmall {
     'alignRight'?: boolean;
-    'data'?: SparkMaxData;
+    'data'?: SparkMAXFrame;
     'name'?: string;
   }
   interface VictorSpxInfoSmall {
     'alignRight'?: boolean;
-    'data'?: VictorSPXData;
+    'data'?: VictorSPXFrame;
     'name'?: string;
   }
 

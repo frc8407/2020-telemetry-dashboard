@@ -1,5 +1,5 @@
-import { Component, h, getAssetPath, Prop } from '@stencil/core';
-import { VictorSPXData } from '../victor-spx-info-small/victor-spx-info-small';
+import { Component, h, Prop } from '@stencil/core';
+import { IntakeData } from '../../data';
 
 
 @Component({
@@ -8,27 +8,16 @@ import { VictorSPXData } from '../victor-spx-info-small/victor-spx-info-small';
   shadow: true
 })
 export class IntakeTelemetry {
-  @Prop() innerIntakeData: VictorSPXData;
-  @Prop() outerIntakeData: VictorSPXData;
-  @Prop() indexerData: VictorSPXData;
-
-  getStyle(): any {
-    return { 'background-image': `url(${getAssetPath('./assets/intake-icon.svg')}` }
-  }
-
+  @Prop() intakeFrame: IntakeData;
   render() {
     return (
       <div class='telemetry-main'>
         <span id='title'>Intake</span>
         <div style={{ height: '12px' }} />
         <div id='row'>
-          <div class='image' style={this.getStyle()} />
+          <spark-max-info-small name="intake" data={this.intakeFrame.intakeMotorFrame} />
           <div style={{ width: '24px' }} />
-          <victor-spx-info-small name="innerIntake" data={this.innerIntakeData} />
-          <div style={{ width: '24px' }} />
-          <victor-spx-info-small name="outerIntake" data={this.outerIntakeData} />
-          <div style={{ width: '24px' }} />
-          <victor-spx-info-small name="indexer" data={this.indexerData} />
+          <spark-max-info-small name="indexer" data={this.intakeFrame.indexerMotorFrame} />
         </div>
       </div>
     );

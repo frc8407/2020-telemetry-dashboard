@@ -31,3 +31,18 @@
   font-weight: 400;
   color: #777;
 }
+
+.container {
+  padding: 12px;
+  border-radius: 4px;
+
+  width: 125px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+}

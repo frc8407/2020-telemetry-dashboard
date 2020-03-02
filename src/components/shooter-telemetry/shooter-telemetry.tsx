@@ -1,5 +1,5 @@
-import { Component, h, getAssetPath, Prop } from '@stencil/core';
-import { SparkMaxData } from '../spark-max-info-small/spark-max-info-small';
+import { Component, h, Prop } from '@stencil/core';
+import { ShooterData } from '../../data';
 
 
 @Component({
@@ -8,24 +8,28 @@ import { SparkMaxData } from '../spark-max-info-small/spark-max-info-small';
   shadow: true
 })
 export class ShooterTelemetry {
-  @Prop() leftShooterData: SparkMaxData;
-  @Prop() rightShooterData: SparkMaxData;
-
-  getStyle(): any {
-    return { 'background-image': `url(${getAssetPath('./assets/shooter-icon.svg')}` }
-  }
+  @Prop() shooterFrame: ShooterData;
 
   render() {
     return (
       <div class='telemetry-main'>
-        <span id='title'>Shooter</span>
+        <div class='row'>
+          <span id='title'>Shooter</span>
+          <div style={{ width: '12px' }} />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+          <div class='circle' />
+        </div>
         <div style={{ height: '12px' }} />
-        <div id='row'>
-          <div class='image' style={this.getStyle()} />
+        <div class='row'>
+          <spark-max-info-small name="leftShooter" data={this.shooterFrame.leftMotorFrame} />
           <div style={{ width: '24px' }} />
-          <spark-max-info-small name="leftShooter" data={this.leftShooterData} />
-          <div style={{ width: '24px' }} />
-          <spark-max-info-small name="rightShooter" data={this.rightShooterData} />
+          <spark-max-info-small name="rightShooter" data={this.shooterFrame.rightMotorFrame} />
         </div>
       </div>
     );

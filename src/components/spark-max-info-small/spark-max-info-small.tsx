@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { SparkMAXFrame } from '../../data';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Component, h, Prop } from '@stencil/core';
 export class SparkMaxInfoSmall {
   @Prop() alignRight: boolean;
   @Prop() name: string;
-  @Prop() data: SparkMaxData;
+  @Prop() data: SparkMAXFrame;
 
   render() {
     return (
@@ -23,16 +24,4 @@ export class SparkMaxInfoSmall {
       </div>
     );
   }
-}
-
-export interface SparkMaxData {
-  temperature: number;
-  velocity: number;
-  position: number;
-  voltage: number;
-  current: number;
-  output: number;
-  openLoopRampRate: number;
-  closedLoopRampRate: number;
-  isInverted: boolean;
 }

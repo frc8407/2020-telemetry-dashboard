@@ -14,7 +14,16 @@
   background-size: 140px;
 }
 
-#row {
+.row {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-right: 8px;
 }

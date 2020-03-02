@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { VictorSPXFrame } from '../../data';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Component, h, Prop } from '@stencil/core';
 export class VictorSPXInfoSmall {
   @Prop() alignRight: boolean;
   @Prop() name: string;
-  @Prop() data: VictorSPXData;
+  @Prop() data: VictorSPXFrame;
 
   render() {
     return (
@@ -22,12 +23,4 @@ export class VictorSPXInfoSmall {
       </div>
     );
   }
-}
-
-export interface VictorSPXData {
-  voltage: number;
-  outputVoltage: number;
-  outputPercentage: number;
-  temperature: number;
-  isInverted: boolean;
 }

@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+import { GyroData } from '../../data';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class GyroInfoSmall {
-  @Prop() data: { yaw: number }
+  @Prop() data: GyroData
   render() {
     return (
       <div class='container'>
