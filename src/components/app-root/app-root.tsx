@@ -1,6 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 import io from 'socket.io-client'
-import { RobotFrame, SparkMAXFrame, robotMockData } from '../../data';
+import { RobotFrame, robotMockData } from '../../data';
 
 
 @Component({
