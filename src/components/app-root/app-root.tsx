@@ -10,7 +10,7 @@ import { RobotFrame, SparkMAXFrame, robotMockData } from '../../data';
 })
 export class AppRoot {
   @State() robotFrame: RobotFrame;
-  enableMock = true
+  enableMock = false
 
   connectToSocket() {
     if (this.enableMock) {
@@ -33,7 +33,7 @@ export class AppRoot {
   render() {
     if (!this.robotFrame) {
       return (
-        <div style={{ 'font-size': '24px', color: '#fff' }}>
+        <div style={{ 'font-size': '24px', color: '#fff', display: 'flex', 'justify-content': 'center', 'align-items': 'center'}}>
           Loading...
         </div>
       )
