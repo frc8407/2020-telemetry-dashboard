@@ -49,6 +49,14 @@ export interface RobotFrame {
   shooter: ShooterData;
   gyro: GyroData;
   battery: BatteryData;
+  limelightPID: PIDSettingsFrame;
+}
+
+export interface PIDSettingsFrame {
+  p: number;
+  i: number;
+  d: number;
+  ff: number;
 }
 
 export const sparkMaxMockData: SparkMAXFrame = {
@@ -68,6 +76,12 @@ export const victorSpxMockData: VictorSPXFrame = {
   outputVoltage: 12.0,
   temperature: 36.0,
   voltage: 12.0,
+}
+export const pidMockData: PIDSettingsFrame = {
+  p: 1.0,
+  i: 0.9,
+  d: 0.8,
+  ff: 0.5
 }
 export const robotMockData: RobotFrame = {
   drivetrain: {
@@ -90,4 +104,5 @@ export const robotMockData: RobotFrame = {
     leftMotorFrame: sparkMaxMockData,
     rightMotorFrame: sparkMaxMockData,
   },
+  limelightPID: pidMockData,
 }

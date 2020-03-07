@@ -1,0 +1,42 @@
+.pid-main {
+  padding: 24px;
+  box-sizing: border-box;
+}
+.title {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  margin-right: 8px;
+  width: 48px;
+}
+.title-small {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.image {
+  width: 140px;
+  height: 140px;
+  background-size: 140px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-black {
+  background-color: #333;
+  border: #444;
+
+  padding: 8px;
+  color: #fff;
+
+  outline: none;
+}
+
+.input-black:focus {
+  border: #229;
+}

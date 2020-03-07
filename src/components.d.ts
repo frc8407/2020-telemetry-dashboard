@@ -12,6 +12,7 @@ import {
   DrivetrainData,
   GyroData,
   IntakeData,
+  PIDSettingsFrame,
   ShooterData,
   SparkMAXFrame,
   VictorSPXFrame,
@@ -37,6 +38,11 @@ export namespace Components {
     'reversed': boolean;
     'units': string;
     'value': number;
+  }
+  interface PidControllerTuning {
+    'data': PIDSettingsFrame;
+    'name': string;
+    'onSave': (name: string, newData: PIDSettingsFrame) => void;
   }
   interface ShooterTelemetry {
     'shooterFrame': ShooterData;
@@ -92,6 +98,12 @@ declare global {
     new (): HTMLKeyValueTextElement;
   };
 
+  interface HTMLPidControllerTuningElement extends Components.PidControllerTuning, HTMLStencilElement {}
+  var HTMLPidControllerTuningElement: {
+    prototype: HTMLPidControllerTuningElement;
+    new (): HTMLPidControllerTuningElement;
+  };
+
   interface HTMLShooterTelemetryElement extends Components.ShooterTelemetry, HTMLStencilElement {}
   var HTMLShooterTelemetryElement: {
     prototype: HTMLShooterTelemetryElement;
@@ -116,6 +128,7 @@ declare global {
     'gyro-info-small': HTMLGyroInfoSmallElement;
     'intake-telemetry': HTMLIntakeTelemetryElement;
     'key-value-text': HTMLKeyValueTextElement;
+    'pid-controller-tuning': HTMLPidControllerTuningElement;
     'shooter-telemetry': HTMLShooterTelemetryElement;
     'spark-max-info-small': HTMLSparkMaxInfoSmallElement;
     'victor-spx-info-small': HTMLVictorSpxInfoSmallElement;
@@ -143,6 +156,11 @@ declare namespace LocalJSX {
     'units'?: string;
     'value'?: number;
   }
+  interface PidControllerTuning {
+    'data'?: PIDSettingsFrame;
+    'name'?: string;
+    'onSave'?: (name: string, newData: PIDSettingsFrame) => void;
+  }
   interface ShooterTelemetry {
     'shooterFrame'?: ShooterData;
   }
@@ -164,6 +182,7 @@ declare namespace LocalJSX {
     'gyro-info-small': GyroInfoSmall;
     'intake-telemetry': IntakeTelemetry;
     'key-value-text': KeyValueText;
+    'pid-controller-tuning': PidControllerTuning;
     'shooter-telemetry': ShooterTelemetry;
     'spark-max-info-small': SparkMaxInfoSmall;
     'victor-spx-info-small': VictorSpxInfoSmall;
@@ -182,6 +201,7 @@ declare module "@stencil/core" {
       'gyro-info-small': LocalJSX.GyroInfoSmall & JSXBase.HTMLAttributes<HTMLGyroInfoSmallElement>;
       'intake-telemetry': LocalJSX.IntakeTelemetry & JSXBase.HTMLAttributes<HTMLIntakeTelemetryElement>;
       'key-value-text': LocalJSX.KeyValueText & JSXBase.HTMLAttributes<HTMLKeyValueTextElement>;
+      'pid-controller-tuning': LocalJSX.PidControllerTuning & JSXBase.HTMLAttributes<HTMLPidControllerTuningElement>;
       'shooter-telemetry': LocalJSX.ShooterTelemetry & JSXBase.HTMLAttributes<HTMLShooterTelemetryElement>;
       'spark-max-info-small': LocalJSX.SparkMaxInfoSmall & JSXBase.HTMLAttributes<HTMLSparkMaxInfoSmallElement>;
       'victor-spx-info-small': LocalJSX.VictorSpxInfoSmall & JSXBase.HTMLAttributes<HTMLVictorSpxInfoSmallElement>;

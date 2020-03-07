@@ -1,6 +1,6 @@
 import { Component, h, State } from '@stencil/core';
 import io from 'socket.io-client'
-import { RobotFrame, robotMockData } from '../../data';
+import { RobotFrame, robotMockData, PIDSettingsFrame } from '../../data';
 
 
 @Component({
@@ -10,7 +10,8 @@ import { RobotFrame, robotMockData } from '../../data';
 })
 export class AppRoot {
   @State() robotFrame: RobotFrame;
-  enableMock = false
+  @State() connection: SocketIOClient.Socket
+  enableMock = true
 
   connectToSocket() {
     if (this.enableMock) {
@@ -19,11 +20,16 @@ export class AppRoot {
     }
     else {
       console.log('connecting to socket')
-      const connection = io.connect('http://localhost:3008')
-      connection.on('update', (v) => {
+
+      this.connection = io.connect('http://localhost:3008')
+      this.connection.on('update', (v) => {
         this.robotFrame = v;
       })
     }
+  }
+
+  savePIDSettings(name: string, newSettings: PIDSettingsFrame) {
+    this.connection.emit('pid-update', { name, settings: newSettings })
   }
 
   componentWillLoad() {
@@ -33,7 +39,7 @@ export class AppRoot {
   render() {
     if (!this.robotFrame) {
       return (
-        <div style={{ 'font-size': '24px', color: '#fff', display: 'flex', 'justify-content': 'center', 'align-items': 'center'}}>
+        <div style={{ 'font-size': '24px', color: '#fff', display: 'flex', 'justify-content': 'center', 'align-items': 'center' }}>
           Loading...
         </div>
       )
@@ -60,6 +66,13 @@ export class AppRoot {
             <div id='intake-telemetry' class='card'>
               <intake-telemetry
                 intakeFrame={this.robotFrame.intake} />
+            </div>
+            <div style={{ height: '24px' }} />
+            <div id='limelight-pid-tuning' class='card'>
+              <pid-controller-tuning
+                name="limelight-aim"
+                data={this.robotFrame.limelightPID}
+                onSave={this.savePIDSettings} />
             </div>
             <div style={{ height: '24px' }} />
           </div>
